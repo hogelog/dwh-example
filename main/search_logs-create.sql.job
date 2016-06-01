@@ -1,0 +1,10 @@
+/*
+  class: sql
+*/
+
+CREATE TABLE IF NOT EXISTS search_logs (
+  request_time DATETIME,
+  user_id      INTEGER,
+  keyword      VARCHAR(300)
+)
+;

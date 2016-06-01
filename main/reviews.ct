@@ -1,0 +1,10 @@
+CREATE TABLE reviews_wk (
+  id        INTEGER,
+  user_id        INTEGER,
+  place_id       INTEGER,
+  point FLOAT4,
+  comment VARCHAR(300),
+  created_at DATETIME,
+  updated_at DATETIME
+)
+;

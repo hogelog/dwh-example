@@ -1,0 +1,26 @@
+% require "denv"
+% Denv.load
+sql:
+  type: psql
+  host: <%= ENV["REDSHIFT_HOST"] %>
+  port: 5439
+  database: <%= ENV["REDSHIFT_DATABASE"] %>
+  username: <%= ENV["REDSHIFT_USERNAME"] %>
+  password: <%= ENV["REDSHIFT_PASSWORD"] %>
+  encoding: utf8
+
+s3:
+  type: s3
+  bucket: <%= ENV["S3_BUCKET"] %>
+  prefix: <%= ENV["S3_PREFIX"] %>
+  access_key_id: <%= ENV["S3_ACCESS_KEY_ID"] %>
+  secret_access_key: <%= ENV["S3_SECRET_ACCESS_KEY"] %>
+
+mysql:
+  type: mysql
+  host: <%= ENV["MYSQL_HOST"] %>
+  port: 3306
+  database: <%= ENV["MYSQL_DATABASE"] %>
+  username: <%= ENV["MYSQL_USERNAME"] %>
+  password: <%= ENV["MYSQL_PASSWORD"] %>
+  encoding: utf8

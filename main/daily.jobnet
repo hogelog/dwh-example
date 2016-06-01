@@ -1,0 +1,5 @@
+reviews-migrate
+-> review_counts-create
+tmp_search_logs-create
+-> search_logs-create
+-> search_logs-insert

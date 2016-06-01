@@ -1,0 +1,2 @@
+class: exec
+args: [./bin/bricolage-embulk.sh, run, -b, embulk, main/tmp_search_logs-create.yml.liquid]

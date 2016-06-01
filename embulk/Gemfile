@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'embulk-input-s3'
+gem 'embulk-output-redshift'

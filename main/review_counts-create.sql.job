@@ -1,0 +1,14 @@
+/*
+  class: sql
+*/
+
+DROP TABLE IF EXISTS review_counts
+;
+
+CREATE TABLE review_counts AS
+  SELECT
+    user_id,
+    COUNT(*) counts
+  FROM reviews
+  GROUP BY 1
+;

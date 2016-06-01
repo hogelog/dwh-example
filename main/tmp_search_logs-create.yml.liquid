@@ -1,0 +1,28 @@
+in:
+  type: s3
+  bucket: {{ env.S3_BUCKET }}
+  path_prefix: logs/search_logs.{{ env.DATA_DATE }}.csv
+  endpoint: s3-ap-northeast-1.amazonaws.com
+  access_key_id: {{ env.S3_ACCESS_KEY_ID }}
+  secret_access_key: {{ env.S3_SECRET_ACCESS_KEY }}
+  parser:
+    charset: UTF-8
+    newline: LF
+    type: csv
+    columns:
+      - {name: request_time , type: timestamp, format: '%Y-%m-%d %H:%M:%S'}
+      - {name: user_id, type: long}
+      - {name: keyword, type: string}
+out:
+  type: redshift
+  host: {{ env.REDSHIFT_HOST }}
+  database: {{ env.REDSHIFT_DATABASE }}
+  user: {{ env.REDSHIFT_USERNAME }}
+  password: {{ env.REDSHIFT_PASSWORD }}
+  table: tmp_search_logs
+  access_key_id: {{ env.S3_ACCESS_KEY_ID }}
+  secret_access_key: {{ env.S3_SECRET_ACCESS_KEY }}
+  s3_bucket: {{ env.S3_BUCKET }}
+  s3_key_prefix: {{ env.S3_PREFIX }}
+  mode: truncate_insert
+  default_timezone: '+0900'

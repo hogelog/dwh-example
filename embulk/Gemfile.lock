@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    embulk-input-s3 (0.2.8)
+    embulk-output-redshift (0.6.0)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  embulk-input-s3
+  embulk-output-redshift
+
+BUNDLED WITH
+   1.10.6

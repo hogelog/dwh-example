@@ -1,0 +1,11 @@
+class: my-migrate
+src-tables:
+  reviews: reviews
+tmp-file: tmp/reviews.json.gz
+sqldump: true
+s3-file: reviews-${data_date}.json.gz
+table-def: reviews.ct
+dest-table: reviews
+gzip: true
+vacuum: true
+options: ACCEPTINVCHARS TRUNCATECOLUMNS

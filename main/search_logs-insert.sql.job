@@ -1,0 +1,10 @@
+/*
+  class: sql
+*/
+INSERT INTO search_logs (request_time, user_id, keyword)
+  SELECT request_time, user_id, keyword
+  FROM tmp_search_logs
+;
+
+TRUNCATE tmp_search_logs
+;
